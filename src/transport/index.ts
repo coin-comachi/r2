@@ -38,9 +38,9 @@ try {
 // console output
 process.stdin.pipe(pretty({ colorize: true, withLabel: false, debug: false, hidden: false })).pipe(process.stdout);
 
-// debug.log
-const debugFile = fs.createWriteStream('logs/debug.log', { flags: 'a' });
-process.stdin.pipe(pretty({ colorize: false, withLabel: true, debug: true, hidden: false })).pipe(debugFile);
+// debug.log OFF
+//const debugFile = fs.createWriteStream('logs/debug.log', { flags: 'a' });
+//process.stdin.pipe(pretty({ colorize: false, withLabel: true, debug: true, hidden: false })).pipe(debugFile);
 
 // info.log
 const infoTransform = process.stdin.pipe(pretty({ colorize: false, withLabel: true, debug: false, hidden: false }));
